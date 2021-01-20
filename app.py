@@ -8,6 +8,10 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 cors = CORS(app)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 
 @app.route('/table1', methods=['POST'])
 @cross_origin(headers=['Content-Type', 'Authorization'])
